@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: koh-kojima-express-app
+    app.kubernetes.io/instance: koh-kojima-pipeline-from-scratch
+    app.kubernetes.io/name: koh-kojima-express-app
+  name: koh-kojima-express-app
+spec:
+  ports:
+    - name: http
+      port: 80
+      protocol: TCP
+      targetPort: 3000
+  selector:
+    app.kubernetes.io/instance: koh-kojima-pipeline-from-scratch
+    app.kubernetes.io/name: koh-kojima-express-app
+  sessionAffinity: None
+  type: ClusterIP
