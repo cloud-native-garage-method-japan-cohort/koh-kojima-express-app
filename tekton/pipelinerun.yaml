@@ -1,0 +1,12 @@
+apiVersion: tekton.dev/v1beta1
+kind: PipelineRun
+metadata:
+  generateName: koh-kojima-from-scratch-pipeline-run-
+spec:
+  serviceAccountName: build-bot
+  pipelineRef:
+    name: koh-kojima-pipeline-from-scratch-pipeline
+  workspaces:
+    - name: pipeline-shared-data
+      persistentVolumeClaim:
+        claimName: koh-kojima-pvc
