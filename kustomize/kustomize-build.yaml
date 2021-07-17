@@ -11,7 +11,7 @@ spec:
       description: contains the cloned git repo
   steps:
     - name: kustomize-build
-      image: docker.io/enzobarrett/kustomize:latest
+      image: docker.io/kokoji/kustomize:latest
       script: |
         #!/bin/sh
         cd source/kustomize

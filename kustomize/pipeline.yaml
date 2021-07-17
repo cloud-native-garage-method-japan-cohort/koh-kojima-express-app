@@ -66,7 +66,7 @@ spec:
         - build-image
       params:
         - name: image-with-tag
-          value: "quay.io/kokoji/express-sample-app=$(params.image-repo):$(tasks.clone-repository.results.commit)"
+          value: "quay.io/kokoji/koh-kojima-express-app=$(params.image-repo):$(tasks.clone-repository.results.commit)"
       taskRef:
         kind: Task
         name: kustomize-build
@@ -80,7 +80,7 @@ spec:
         - name: app-namespace
           value: koh-kojima-pipeline-from-scratch
         - name: app-name
-          value: koh-kojima-pipeline-from-scratch
+          value: koh-kojima-express-app
       taskRef:
         kind: Task
         name: test-deploy
